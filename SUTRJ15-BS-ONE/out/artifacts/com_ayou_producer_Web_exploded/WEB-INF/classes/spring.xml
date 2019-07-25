@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:task="http://www.springframework.org/schema/task"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context-4.0.xsd
+		http://www.springframework.org/schema/rabbit
+        http://www.springframework.org/schema/rabbit/spring-rabbit-1.7.xsd
+		http://www.springframework.org/schema/task
+        http://www.springframework.org/schema/task/spring-task-4.0.xsd">
+
+	<!-- 引入config.properties属性文件 -->
+	<context:property-placeholder location="classpath:applcation.properties"/>
+
+	<!-- 自动扫描(自动注入)，扫描这个包以及它的子包的所有使用@Service注解标注的类 -->
+	<context:component-scan base-package="com.ayou.*" />
+
+	<!-- 连接rabbit配置 -->
+	<rabbit:connection-factory id="connectionFactory" host="${mq.ip}" username="${mq.user}"
+							   password="${mq.password}" port="${mq.port}" />
+
+	<rabbit:admin connection-factory="connectionFactory"/>
+
+	<!-- 定时任务  start -->
+	<!--<context:component-scan base-package="com.ayou" />
+	<task:annotation-driven scheduler="officeScheduler" mode="proxy"/>
+	<task:scheduler id="officeScheduler" pool-size="10" />
+	<task:scheduled-tasks scheduler="officeScheduler">-->
+		<!-- 定时更新banner的状态 -->
+		<!-- <task:scheduled ref="inventoryTaskOrderTask" method="doTask" cron="0 0/1 * * * ?" /> -->
+		<!--<task:scheduled ref="modifyStatusTask" method="doTaskOne" cron="0 0 0 * * ?" />
+		<task:scheduled ref="modifyStatusTask" method="doTaskTwo" cron="0 0 0 * * ?" />-->
+		<!-- <task:scheduled ref="bannerTask" method="doTask" cron="0 0/30 * * * ?" />  半小时执行一次
+		<task:scheduled ref="bannerTask" method="doTask" cron="0/5 * * * * ?" />  每5秒执行一次 -->
+	<!--</task:scheduled-tasks>-->
+	<!-- 定时任务  end -->
+</beans>
