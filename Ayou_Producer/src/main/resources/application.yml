@@ -1,0 +1,56 @@
+
+spring:
+
+  rabbitmq:
+    host: 127.0.0.1
+    username: guest
+    password: guest
+    virtual-host: /
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/rjgc-190701?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+        initial-size: 8
+        min-idle: 1
+        max-active: 20
+        max-wait: 60000
+        time-between-eviction-runsMillis: 60000
+        min-evictable-idle-timeMillis: 300000
+        validation-query: select 'x' FROM DUAL
+        test-while-idle: true
+        test-on-borrow: false
+        test-on-return: false
+        pool-prepared-statements: true
+        max-open-prepared-statements: 20
+        max-pool-prepared-statement-per-connection-size: 20
+        filters: stat
+        connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+        use-global-data-source-stat: true
+
+
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    password:
+    jedis:
+      pool:
+        max-active: 200
+        max-wait: -1
+        max-idle: 10
+        min-idle: 0
+
+    timeout: 1000
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+
+server:
+  port: 8888
