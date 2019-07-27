@@ -18,6 +18,7 @@ public class ProducerApplicationTests {
     @Autowired
     RedisProducerDemo redisProducerDemo;
 
+
     @Test
     public void contextLoads() {
     //    redisProducerDemo.lockImplRedis("lgzz");

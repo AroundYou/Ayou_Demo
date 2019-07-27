@@ -1,0 +1,8 @@
+com\cn\ayou\consumer\util\Merchant.class
+com\cn\ayou\consumer\ConsumerApplication.class
+com\cn\ayou\consumer\service\impl\SecondConsumer.class
+com\cn\ayou\consumer\service\impl\ThirdConsumer.class
+com\cn\ayou\consumer\service\impl\FourthConsumer.class
+com\cn\ayou\consumer\service\impl\FivethConsumer.class
+com\cn\ayou\consumer\configure\RabbitConfigure.class
+com\cn\ayou\consumer\service\impl\FirstConsumer.class

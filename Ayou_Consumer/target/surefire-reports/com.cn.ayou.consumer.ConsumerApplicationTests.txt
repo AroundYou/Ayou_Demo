@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.cn.ayou.consumer.ConsumerApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 13.402 s - in com.cn.ayou.consumer.ConsumerApplicationTests

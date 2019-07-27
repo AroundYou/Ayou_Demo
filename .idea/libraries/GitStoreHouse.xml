@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="GitStoreHouse">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/Ayou_Consumer/src/main/java" />
+      <root url="file://$PROJECT_DIR$/Ayou_Consumer/src/test/java" />
+      <root url="file://$PROJECT_DIR$/Ayou_Producer/src/main/java" />
+      <root url="file://$PROJECT_DIR$/Ayou_Producer/src/test/java" />
+      <root url="file://$PROJECT_DIR$/SUTRJ15-BS-ONE/src/main/java" />
+      <root url="file://$PROJECT_DIR$/SUTRJ15-BS-ONE/src/test/java" />
+    </SOURCES>
+  </library>
+</component>
